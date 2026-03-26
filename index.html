@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog · EL_FACHEYT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #ffffff;
+      color: #111;
+      font-family: 'Outfit', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* HERO */
+    .hero {
+      width: 100%;
+      height: 100vh;
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(255,255,255,0) 25%,
+        rgba(255,255,255,0.88) 80%,
+        #ffffff 100%
+      );
+    }
+    .hero-text {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 2;
+      white-space: nowrap;
+    }
+    .hero-text h1 {
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      font-weight: 800;
+      color: #111;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .hero-text h1 span { color: #1a8c4e; }
+    .hero-text p {
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: #777;
+      text-transform: uppercase;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 6rem;
+    }
+    .divider {
+      width: 36px;
+      height: 3px;
+      background: #1a8c4e;
+      border-radius: 2px;
+      margin: 0 auto 2.5rem;
+    }
+    .about {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .about-badge {
+      display: inline-block;
+      background: #f0faf5;
+      color: #1a8c4e;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3em 0.9em;
+      border-radius: 100px;
+      border: 1px solid #c2e8d5;
+      margin-bottom: 1rem;
+    }
+    .about h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -0.02em;
+    }
+    .about p {
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+      color: #888;
+      font-weight: 300;
+    }
+    .redes-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #bbb;
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+    .redes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .red-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.95rem 1.2rem;
+      border: 1px solid #ebebeb;
+      border-radius: 14px;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
+    }
+    .red-card:hover {
+      border-color: #d0d0d0;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+    .red-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .red-icon svg { width: 21px; height: 21px; }
+    .red-icon.yt { background: #fff0f0; }
+    .red-icon.yt svg { fill: #dd0000; }
+    .red-icon.rb { background: #eef3ff; }
+    .red-icon.rb svg { fill: #1a73e8; }
+    .red-info { flex: 1; }
+    .red-net {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 2px;
+    }
+    .red-handle {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #111;
+    }
+    .red-arrow {
+      color: #ddd;
+      font-size: 1.3rem;
+      line-height: 1;
+      transition: color 0.2s, transform 0.18s;
+    }
+    .red-card:hover .red-arrow {
+      color: #aaa;
+      transform: translateX(3px);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.8rem;
+      font-size: 0.7rem;
+      color: #ccc;
+      letter-spacing: 0.1em;
+      border-top: 1px solid #f2f2f2;
+    }
+    footer span { color: #1a8c4e; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <img src="/mnt/user-data/uploads/Screenshot_2026-03-13_19_40_43.png" alt="Mundo Bloxd"/>
+    <div class="hero-text">
+      <h1>Blog De: <span>EL_FACHEYT</span></h1>
+      <p>Made by: Daniel Ibor N</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="divider"></div>
+
+    <div class="about">
+      <div class="about-badge">Sobre mí</div>
+      <h2>EL_FACHEYT</h2>
+      <p>Programador Y Jugador</p>
+    </div>
+
+    <p class="redes-title">Redes sociales</p>
+    <div class="redes-list">
+
+      <a class="red-card" href="https://www.youtube.com/@EL_FACHEYT" target="_blank" rel="noopener">
+        <div class="red-icon yt">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a2.999 2.999 0 0 0-2.112-2.12C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.386.566A2.999 2.999 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.999 2.999 0 0 0 2.112 2.12C4.495 20.5 12 20.5 12 20.5s7.505 0 9.386-.566a2.999 2.999 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </div>
+        <div class="red-info">
+          <div class="red-net">YouTube</div>
+          <div class="red-handle">@EL_FACHEYT</div>
+        </div>
+        <span class="red-arrow">›</span>
+      </a>
+
+      <a class="red-card" href="https://www.youtube.com/@BLOXD_PRO-q4k" target="_blank" rel="noopener">
+        <div class="red-icon yt">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a2.999 2.999 0 0 0-2.112-2.12C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.386.566A2.999 2.999 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a2.999 2.999 0 0 0 2.112 2.12C4.495 20.5 12 20.5 12 20.5s7.505 0 9.386-.566a2.999 2.999 0 0 0 2.112-2.12C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </div>
+        <div class="red-info">
+          <div class="red-net">YouTube · Bloxd</div>
+          <div class="red-handle">@BLOXD_PRO-q4k</div>
+        </div>
+        <span class="red-arrow">›</span>
+      </a>
+
+      <a class="red-card" href="https://www.roblox.com/users/search?keyword=EL_FACHEYT" target="_blank" rel="noopener">
+        <div class="red-icon rb">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.052 0L0 19.948 19.948 24 24 4.052 4.052 0zm11.153 14.933l-4.868-1.164 1.164-4.868 4.868 1.164-1.164 4.868z"/>
+          </svg>
+        </div>
+        <div class="red-info">
+          <div class="red-net">Roblox</div>
+          <div class="red-handle">EL_FACHEYT</div>
+        </div>
+        <span class="red-arrow">›</span>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2026 <span>EL_FACHEYT</span> · Made by <span>Daniel Ibor N</span>
+  </footer>
+
+</body>
+</html>
